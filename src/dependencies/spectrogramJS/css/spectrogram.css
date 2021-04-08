@@ -24,6 +24,6 @@ canvas, svg {
 }
 
 #progress-line {
-    stroke: #a50f15;
+    stroke: indianred;
     stroke-width: 4px;
 }

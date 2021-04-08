@@ -1,0 +1,71 @@
+:root {
+    --primary-color: #C95454;
+    --background-color: #F5F1ED;
+    --separator-color: #58355E;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: var(--background-color);
+}
+
+header {
+    border-bottom: 2px solid var(--separator-color);
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    /* align-content: center; */
+    justify-content: space-between;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    display: flex;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+#delete-button {
+    display: flex;
+    align-self: center;
+}
+
+
+/* Spectrogram */
+canvas, svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.spectrogram {
+    position: relative;
+}
+
+.axis {
+    font: 14px 'Oswald';
+}
+
+.axis path, .axis line {
+    fill: none;
+}
+
+.axis line {
+    shape-rendering: crispEdges;
+    stroke: #444;
+    stroke-width: 1.0px;
+    stroke-dasharray: 2, 4;
+}
+
+#progress-line {
+    stroke:var(--primary-color);
+    stroke-width: 4px;
+}
