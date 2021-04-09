@@ -1,16 +1,25 @@
+/*
+ * Author: Ian Fowler
+ * CS 101 Spring 2021
+ * CP 1 Spectrogram Viewer
+ * CSS for page elements and overrides for SpectrogramJS
+ */
+
 :root {
     --primary-color: #C95454;
     --background-color: #F5F1ED;
     --separator-color: #58355E;
-}
-
-body {
-    font-family: 'Oswald', sans-serif;
-    background-color: var(--background-color);
+    --form-height: 3em;
 }
 
 header {
     border-bottom: 2px solid var(--separator-color);
+}
+
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: var(--background-color);
 }
 
 article {
@@ -36,10 +45,11 @@ h2 {
 #delete-button {
     display: flex;
     align-self: center;
+    border-width: 0.2em;
+    border-color: var(--primary-color);
 }
 
-
-/* Spectrogram */
+/* SpectrogramJS */
 canvas, svg {
     position: absolute;
     top: 0;
@@ -50,9 +60,6 @@ canvas, svg {
     position: relative;
 }
 
-.axis {
-    font: 14px 'Oswald';
-}
 
 .axis path, .axis line {
     fill: none;
@@ -69,3 +76,45 @@ canvas, svg {
     stroke:var(--primary-color);
     stroke-width: 4px;
 }
+
+input:checked + label {
+  color: red;
+  font-weight: bold;
+}
+
+::placeholder {
+  color: blue;
+}
+
+/* Button */
+.outline-button {
+  padding:0.5em 2.0em;
+  margin:0 0.2em 0.2em 0;
+  border:0.2em solid var(--primary-color);
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  font-family: 'Oswald', sans-serif;
+  text-align:center;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.axis {
+  font-family: 'Oswald', sans-serif;
+}
+
+
+.outline-button:hover {
+  background-color:var(--background-color);
+  color:var(--primary-color);
+  box-shadow: inset var(--primary-color) 0 0 0.06em 0;
+  margin:0 0.2em 0.2em 0;
+}
+
+@media all and (max-width:30em){
+  .outline-button{
+    display:block;
+    margin:0.4em auto;
+  }
+}
+

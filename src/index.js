@@ -11,25 +11,18 @@ addFile = (file, target) => {
     `
     <article>
         <h2>${file.name}</h2>
-        <button id="delete-button" type="button" onclick="deleteCell();">
+        <button class="outline-button" type="button" onclick="deleteCell();">
             Delete
         </button>
-        <div id="vis" class="spectrogram"></div>
+        <div id="#vis" class="spectrogram"></div>
     </article>
     `
   );
 
-  files.push(file.name);
-  console.log(files);
-
-  //   var audio = document.getElementById("myAudio");
   var reader = new FileReader();
   if (target.files && file) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      //   audio.setAttribute("src", e.target.result);
-      //   audio.play();
-
       var sample = new Spectrogram(e.target.result, "#vis", {
         width: 600,
         height: 300,

@@ -21,13 +21,19 @@
     </header>
 
     <main>
-        <section>
-            <div id="vis" class="spectrogram"></div>
-        </section>
         <section id="add-song">
-            <input type="file" id="file-selector" accept=".mp3, .ogg"multiple/>
+            <button class="outline-button">
+                <input label="" type="file" id="file-selector" accept=".mp3, .ogg"multiple/>
+                <label>Choose File</label>
+            </button>
+            
         </section>
     </main>
+
+
+    <button class="outline-button" type="button" onclick="deleteCell();">
+        Delete
+    </button>
 
     <footer>
 
