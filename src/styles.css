@@ -52,6 +52,7 @@ h2 {
 /* SpectrogramJS */
 canvas, svg {
     position: absolute;
+    width: '100%';
     top: 0;
     left: 0;
 }
@@ -89,7 +90,6 @@ input:checked + label {
 /* Button */
 .outline-button {
   padding:0.5em 2.0em;
-  margin:0 0.2em 0.2em 0;
   border:0.2em solid var(--primary-color);
   color: var(--background-color);
   background-color: var(--primary-color);
@@ -97,6 +97,10 @@ input:checked + label {
   text-align:center;
   font-size: 18px;
   transition: all 0.2s;
+}
+
+input[type="file"] {
+  display: none;
 }
 
 .axis {

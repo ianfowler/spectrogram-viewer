@@ -545,11 +545,11 @@ Spectrogram.prototype.draw = function () {
   this.zScale.domain([min + 20, max - 20]);
 
   // get the context from the canvas to draw on
-  var visContext = d3
-    .select(this.selector)
-    .select(".vis_canvas")
-    .node()
-    .getContext("2d");
+  var visNode = d3.select(this.selector).select(".vis_canvas").node();
+
+  if (!visNode) return;
+
+  var visContext = visNode.getContext("2d");
 
   this.svg.select(".x.axis").call(this.xAxis);
   this.svg.select(".y.axis").call(this.yAxis);

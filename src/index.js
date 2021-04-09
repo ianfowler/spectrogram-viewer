@@ -1,31 +1,17 @@
 let count = 0;
 
-deleteCell = () => {
-  alert("Delete that thing!");
+deleteCell = (id) => {
+  var myobj = document.getElementById(id);
+  console.log(id);
+  if (myobj) myobj.remove();
 };
 
-addFile = async (file, target) => {
-  let newId = `vis${count}`;
-  var d1 = document.getElementById("add-song");
-  await d1.insertAdjacentHTML(
-    "beforebegin",
-    `
-    <section>
-        <h2>${file.name}</h2>
-        <button class="outline-button" type="button" onclick="deleteCell();">
-            Delete
-        </button>
-
-        <div id="${newId}" class="spectrogram"></div>
-    </section>
-    `
-  );
-
+addSpectrogram = (target, file, id) => {
   var reader = new FileReader();
   if (target.files && file) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      var sample = new Spectrogram(e.target.result, "#" + newId, {
+      var sample = new Spectrogram(e.target.result, "#" + id, {
         width: 600,
         height: 300,
         colorScheme: [
@@ -44,6 +30,30 @@ addFile = async (file, target) => {
     };
     reader.readAsDataURL(file);
   }
+};
+
+addFile = async (file, target) => {
+  let sectionID = `sec${count}`;
+  let deleteButtonID = `id${count}`;
+  let spectrogramID = `vis${count}`;
+  var d1 = document.getElementById("add-song");
+  await d1.insertAdjacentHTML(
+    "beforebegin",
+    `
+    <section id="${sectionID}">
+        <h2>${file.name}</h2>
+        <button class="outline-button" type="button" id="${deleteButtonID}">
+            Delete
+        </button>
+
+        <div id="${spectrogramID}" class="spectrogram"></div>
+    </section>
+    `
+  );
+  document
+    .getElementById(deleteButtonID)
+    .addEventListener("click", () => deleteCell(sectionID));
+  addSpectrogram(target, file, spectrogramID);
   count += 1;
 };
 
