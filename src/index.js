@@ -1,21 +1,23 @@
-files = [];
+let count = 0;
 
 deleteCell = () => {
   alert("Delete that thing!");
 };
 
-addFile = (file, target) => {
+addFile = async (file, target) => {
+  let newId = `vis${count}`;
   var d1 = document.getElementById("add-song");
-  d1.insertAdjacentHTML(
+  await d1.insertAdjacentHTML(
     "beforebegin",
     `
-    <article>
+    <section>
         <h2>${file.name}</h2>
         <button class="outline-button" type="button" onclick="deleteCell();">
             Delete
         </button>
-        <div id="#vis" class="spectrogram"></div>
-    </article>
+
+        <div id="${newId}" class="spectrogram"></div>
+    </section>
     `
   );
 
@@ -23,7 +25,7 @@ addFile = (file, target) => {
   if (target.files && file) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      var sample = new Spectrogram(e.target.result, "#vis", {
+      var sample = new Spectrogram(e.target.result, "#" + newId, {
         width: 600,
         height: 300,
         colorScheme: [
@@ -42,6 +44,7 @@ addFile = (file, target) => {
     };
     reader.readAsDataURL(file);
   }
+  count += 1;
 };
 
 loadFiles = (target) => {
