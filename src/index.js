@@ -82,7 +82,7 @@ addFile = async (file, target) => {
     "beforebegin",
     `
     <section id="${sectionID}">
-      <span id="title-del">
+      <span class="row-group">
         <h2>${file.name}</h2>
         <button class="outline-button" type="button" id="${deleteButtonID}">
             Delete
