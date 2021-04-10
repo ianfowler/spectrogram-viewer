@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
     <link href="dependencies/spectrogramJS/css/spectrogram.css" media="screen" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="dependencies/spectrogramJS/js/d3.v5.min.js"></script>
@@ -18,21 +17,20 @@
 <body>
     <header>
         <h1>Spectrogram Viewer</h1>
+        <p>
+            Credits to <b>Jim Vallandingham</b> for the SpectrogramJS plotting library on <a href="https://github.com/vlandham/spectrogramJS">GitHub</a>.
+        </p>
     </header>
 
     <main>
         <!-- Spectrograms will be added here -->
         <section id="add-song">
             <label class="outline-button">
-                <input type="file" id="file-selector" accept=".mp3, .ogg"multiple/>
-                Choose File
+                <input type="file" id="file-selector" accept=".mp3, .ogg"/>
+                Choose Audio File
             </label>
         </section>
         
     </main>
-
-    <footer>
-        Credit vlandham
-    </footer>
 </body>
 </html>

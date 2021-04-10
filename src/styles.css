@@ -2,123 +2,94 @@
  * Author: Ian Fowler
  * CS 101 Spring 2021
  * CP 1 Spectrogram Viewer
- * CSS for page elements and overrides for SpectrogramJS
+ * CSS for page elements, some overriding for SpectrogramJS
  */
 
+ /* Oswald Font */
+ @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 :root {
-    --primary-color: #C95454;
-    --background-color: #F5F1ED;
-    --separator-color: #58355E;
-    --form-height: 3em;
+  --background-color: #F5F1ED;
+  --secondary-color: #440154;
+  --primary-color: #C95454;
+  --separator-color: #440154;
+  --footer-height: 3em;
 }
-
-header {
-    border-bottom: 2px solid var(--separator-color);
-}
-
 
 body {
   font-family: 'Oswald', sans-serif;
   background-color: var(--background-color);
 }
 
-article {
-    display: flex;
-    flex-direction: row;
-    /* align-content: center; */
-    justify-content: space-between;
-}
-
 h1, h2 {
-    color: var(--primary-color);
-    display: flex;
+  color: var(--primary-color);
 }
 
 h1 {
-    font-size: 3em;
+  font-size: 3em;
+  border-bottom: 2px solid var(--separator-color);
 }
 
 h2 {
-    font-size: 2em;
+  font-size: 2em;
+  margin: 0;
 }
 
 #delete-button {
-    display: flex;
-    align-self: center;
-    border-width: 0.2em;
-    border-color: var(--primary-color);
-}
-
-/* SpectrogramJS */
-canvas, svg {
-    position: absolute;
-    width: '100%';
-    top: 0;
-    left: 0;
-}
-
-.spectrogram {
-    position: relative;
-}
-
-
-.axis path, .axis line {
-    fill: none;
-}
-
-.axis line {
-    shape-rendering: crispEdges;
-    stroke: #444;
-    stroke-width: 1.0px;
-    stroke-dasharray: 2, 4;
-}
-
-#progress-line {
-    stroke:var(--primary-color);
-    stroke-width: 4px;
-}
-
-input:checked + label {
-  color: red;
-  font-weight: bold;
-}
-
-::placeholder {
-  color: blue;
+  border-width: 0.2em;
+  border-color: var(--primary-color);
 }
 
 /* Button */
-.outline-button {
-  padding:0.5em 2.0em;
+.outline-button, .spectrogram button, .spectrogram select{
+  padding: 0.2em 0.4em;
+  margin-bottom: 1.0em;
+  margin-right: 0.2em;
   border:0.2em solid var(--primary-color);
   color: var(--background-color);
   background-color: var(--primary-color);
   font-family: 'Oswald', sans-serif;
-  text-align:center;
   font-size: 18px;
   transition: all 0.2s;
+}
+
+.outline-button:hover {
+  background-color:var(--background-color);
+  color:var(--primary-color);
+  box-shadow: inset var(--primary-color) 0 0 0.06em 0;
 }
 
 input[type="file"] {
   display: none;
 }
 
+/* Axis for SpectrogramJS */
 .axis {
   font-family: 'Oswald', sans-serif;
 }
 
-
-.outline-button:hover {
-  background-color:var(--background-color);
-  color:var(--primary-color);
-  box-shadow: inset var(--primary-color) 0 0 0.06em 0;
-  margin:0 0.2em 0.2em 0;
+span#title-del {
+  display: flex;
+  justify-content: space-between;
 }
 
-@media all and (max-width:30em){
-  .outline-button{
-    display:block;
-    margin:0.4em auto;
-  }
+a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  height: var(--footer-height);
+}
+
+body {
+  width: 790px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  padding-bottom: var(--footer-height);
+}

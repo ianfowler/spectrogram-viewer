@@ -11,9 +11,9 @@ addSpectrogram = (target, file, id) => {
   if (target.files && file) {
     var reader = new FileReader();
     reader.onload = function (e) {
-      var sample = new Spectrogram(e.target.result, "#" + id, {
-        width: 600,
-        height: 300,
+      new Spectrogram(e.target.result, "#" + id, {
+        width: 720,
+        height: 200,
         colorScheme: [
           "#440154",
           "#472877",
@@ -41,12 +41,13 @@ addFile = async (file, target) => {
     "beforebegin",
     `
     <section id="${sectionID}">
+      <span id="title-del">
         <h2>${file.name}</h2>
         <button class="outline-button" type="button" id="${deleteButtonID}">
             Delete
         </button>
-
-        <div id="${spectrogramID}" class="spectrogram"></div>
+      </span>
+      <div id="${spectrogramID}" class="spectrogram"></div>
     </section>
     `
   );
