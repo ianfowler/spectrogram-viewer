@@ -1,3 +1,15 @@
+
+  
+/**
+ * Name: Ian Fowler
+ * CS 101 Spring 2021
+ * Date: April 10th, 2021
+ * This is the index.js page for Spectrogram Viewer.
+ * It implements the functionality for adding 
+ * spectrograms to the page using the library SpectrogramJS.
+ * The library is located here: https://github.com/vlandham/spectrogramJS
+ */
+
 let count = 0;
 
 deleteCell = (id) => {
