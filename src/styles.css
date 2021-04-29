@@ -83,4 +83,25 @@ body {
 
 main {
   padding-bottom: var(--footer-height);
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+}
+
+canvas {
+  position: relative;
+  border: 0.2em solid var(--primary-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+}
+
+.circle {
+  border: 0.2em solid var(--secondary-color);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  color: var(--secondary-color);
 }

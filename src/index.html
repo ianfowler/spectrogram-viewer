@@ -24,24 +24,19 @@
 </head>
 <body>
   <header>
-    <h1>Spectrogram Viewer</h1>
+    <h1>Rectangle Game</h1>
     <div class="row-group">
       <p>
-        Credits to <strong>Jim Vallandingham</strong> for the SpectrogramJS plotting library on 
-        <a href="https://github.com/vlandham/spectrogramJS">GitHub</a>.
+        Drag the rectangle onto the other rectangle! All the kids love this game.
       </p>
-      <a class="outline-button" href="read_spectrograms.html">How to read a spectrogram</a>
+      <a class="outline-button" href="youtube.com">Please make it stop</a>
     </div>
   </header>
   <main>
-    <!-- Spectrograms to be populated by JavaScript-->
-    <section id="add-song">
-      <h3>Add a new audio file for analysis</h3>
-      <label class="outline-button">
-        <input type="file" id="file-selector" accept=".mp3, .ogg"/>
-        Choose Audio File
-      </label>
-    </section>
+    <canvas id="game-frame">
+
+      <div class="circle"></div>
+    </canvas>
   </main>
 </body>
 </html>
